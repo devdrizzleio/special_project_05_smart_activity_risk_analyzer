@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: smart-risk-analyzer
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: smart-risk-analyzer
+  template:
+    metadata:
+      labels:
+        app: smart-risk-analyzer
+    spec:
+      containers:
+        - name: smart-risk-analyzer
+          image: smart-risk-analyzer:latest
+          ports:
+            - containerPort: 8000
+          envFrom:
+            - configMapRef:
+                name: smart-risk-config

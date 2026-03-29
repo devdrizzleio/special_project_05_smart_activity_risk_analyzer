@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: smart-risk-config
+data:
+  PORT: "8000"
+  RATE_LIMIT_WINDOW_MS: "900000"
+  RATE_LIMIT_MAX_REQUESTS: "100"
+  LOW_RISK_THRESHOLD: "30"
+  MEDIUM_RISK_THRESHOLD: "70"
